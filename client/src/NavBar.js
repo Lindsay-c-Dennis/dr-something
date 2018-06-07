@@ -2,10 +2,10 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const link = {
-	width: '500px',
+	width: '16.5%',
 	padding: '12px',
-	margin: '0 6px 6px',
-	background: url('https://i1.sndcdn.com/artworks-000190520520-fufu7l-t500x500.jpg'),
+	margin: '0 1px 1px',
+	background: '#1648E3',
 	textDecoration: 'none',
 	color: 'white',
 }
