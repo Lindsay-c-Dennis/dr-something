@@ -5,7 +5,7 @@ import NavBar from './NavBar';
 import Home from './components/Home';
 import UpcomingShows from './components/UpcomingShows';
 import News from './components/News';
-import Music from './components/Music';
+import Music from './containers/Music';
 import Videos from './components/Videos';
 import SoundsIllustrated from './components/SoundsIllustrated';
 
