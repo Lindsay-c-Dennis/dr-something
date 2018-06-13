@@ -24,7 +24,7 @@ class SoundsIllustrated extends React.Component {
 					<h3>Note to bands: feel free to use drawings on your websites and social media. I just ask that 
 					you cite me (Alison Dennis) and, preferably, provide a link a link to my site.</h3>
 				</div>
-				
+				<PicsList picTiles={this.props.picTiles} />
 			</div>	
 		)
 	}
