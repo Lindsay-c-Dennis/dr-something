@@ -2,12 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../actions/illustrationActions.js'
-//import SongsList from '../components/SongsList'
+import PicsList from '../components/PicsList'
 
 class SoundsIllustrated extends React.Component {
 
 	componentDidMount() {
-
+		if (this.props.picTiles.length === 0) {
+        this.props.actions.fetchPics();
+    	}
 	}
 
 	render() {
@@ -30,4 +32,16 @@ class SoundsIllustrated extends React.Component {
 	}
 }
 
-export default SoundsIllustrated;
+function mapStateToProps(state) {
+	
+	return {
+		picTiles: state.illustrations.pics,
+		loading: state.illustrations.loading
+	}
+}
+
+const mapDispatchToProps = (dispatch) => {
+	return {actions: bindActionCreators(actions, dispatch)}
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(SoundsIllustrated);
