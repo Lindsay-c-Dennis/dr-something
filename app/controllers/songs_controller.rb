@@ -1,7 +1,8 @@
 class SongsController < ApplicationController
 
 	def index
-		@songs = Songs.all 
+		@songs = Song.all
+		response.headers['Access-Control-Allow-Origin'] = '*' 
 		render json: @songs
 	end
 
