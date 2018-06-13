@@ -13,7 +13,7 @@ class Music extends React.Component {
     }
 
 	render() {
-		//debugger
+		
 		return (
 			<div>	
 				<div className="row justify-content-center">
@@ -28,7 +28,7 @@ class Music extends React.Component {
 }
 
 function mapStateToProps(state) {
-	//debugger
+	
 	return {
 		songTiles: state.songs.tiles,
 		loading: state.songs.loading
