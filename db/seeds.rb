@@ -40,3 +40,7 @@ Illustration.find_or_create_by(image_url: "https://drsomething.files.wordpress.c
 Illustration.find_or_create_by(image_url: "https://drsomething.files.wordpress.com/2016/02/aan_ppn.jpg?w=540", artist: "Aan", artist_url: "https://weareaan.bandcamp.com/", venue: "the PDX Pop Now Festival", date: "Summer 2010")
 Illustration.find_or_create_by(image_url: "https://drsomething.files.wordpress.com/2016/02/autistic_youth_ppn.jpg?w=540", artist: "Autistic Youth", artist_url: "https://autisticyouth.bandcamp.com/", venue: "the PDX Pop Now Festival", date: "Summer 2010")
 Illustration.find_or_create_by(image_url: "https://drsomething.files.wordpress.com/2016/02/ben_darwish_ppn.jpg?w=540", artist: "Ben Darwish", artist_url: "https://bendarwish.bandcamp.com/", venue: "the PDX Pop Now Festival", date: "Summer 2010")
+
+Video.find_or_create_by(title: "Schrodinger's Quarantined", video_url: "https://youtube.com/embed/ZRq91Vs029s", description: "Music video featuring time-lapse photography by <a href='https://vimeo.com/user30781519'>Joseph Appel</a>.")
+Video.find_or_create_by(title: "Red Rover", video_url: "https://youtube.com/embed/Gx98JfsJDk4", description: "Music video featuring footage of the Spirit Mars Rover mission from NASA/JPL - CalTech")
+Video.find_or_create_by(title: "Beaverton TC", video_url: "https://youtube.com/embed/LaXXAh3QpBk", description: "Live performance from October 1, 2016 ath the Lombard Pub in Portland, Oregon, filmed by David Percy")

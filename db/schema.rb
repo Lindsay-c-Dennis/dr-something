@@ -27,4 +27,12 @@ ActiveRecord::Schema.define(version: 2018_06_13_163509) do
     t.string "streamUrl"
   end
 
+  create_table "videos", force: :cascade do |t|
+    t.string "title"
+    t.string "video_url"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
 end
