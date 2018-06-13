@@ -26,7 +26,7 @@ class Videos extends React.Component {
 
 const mapStateToProps = (state) => {
 	return {
-		vidTiles: state.videos.vids 
+		vidTiles: state.videos.vids, 
 		loading: state.videos.loading
 	}
 }	
