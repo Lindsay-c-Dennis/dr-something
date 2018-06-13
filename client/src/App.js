@@ -8,7 +8,7 @@ import UpcomingShows from './components/UpcomingShows';
 import News from './components/News';
 import Music from './containers/Music';
 import Videos from './components/Videos';
-import SoundsIllustrated from './components/SoundsIllustrated';
+import SoundsIllustrated from './containers/SoundsIllustrated';
 
 
 class App extends Component {
