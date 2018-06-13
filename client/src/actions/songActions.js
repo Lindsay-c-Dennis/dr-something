@@ -1,13 +1,14 @@
 import fetch from "isomorphic-fetch";
 
-export function fetchSongs() {
-	return(dispatch) => {
+export const fetchSongs = () => (dispatch) => {
 		dispatch({ type: 'LOADING_SONGS' });
-		return fetch('http://localhost:3001/songs')
+		fetch('http://localhost:3001/songs')
 			.then(response => response.json())
 			.then(responseJSON => {
-				const songs = responseJSON.songs;
-				dispatch({ type: 'FETCH_SONGS', payload: songs })
+				const songs = responseJSON;
+				dispatch({ type: 'FETCH_SONGS_SUCCESS', payload: songs })
 			})
-	}
+			.catch(error => dispatch({ type: 'FETCH_SONGS_FAILED', payload: error }))
 }
+
+
