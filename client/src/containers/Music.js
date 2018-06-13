@@ -18,6 +18,7 @@ class Music extends React.Component {
 			<div>	
 				<div className="row justify-content-center">
 					<h1>Music</h1>
+					<p>Stream selected Dr. Something tracks here, or visit <a href="http://drsomething.bandcamp.com/">Bandcamp</a> to find all releases.</p>
 				</div>
 				<SongsList songTiles={this.props.songTiles} loading={this.props.loading} />
 					

@@ -1,0 +1,3 @@
+class Illustration < ApplicationRecord
+	
+end
