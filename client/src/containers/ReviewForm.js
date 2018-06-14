@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { addReview } from '../actions/reviewActions';
 
-class ReviewForm extends Component {
+class ReviewForm extends React.Component {
 	constructor(props) {
 		super(props)
 
@@ -19,7 +19,7 @@ class ReviewForm extends Component {
 		});
 	}
 
-	handleonSubmit = event => {
+	handleOnSubmit = event => {
 		event.preventDefault();
 		this.props.addReview(this.state)
 		this.setState({
@@ -32,21 +32,20 @@ class ReviewForm extends Component {
 		return (
 			<div>
 				<form onSubmit={this.handleOnSubmit}>
-					<label>Your note:</label><br>
+					<label>Your note:</label><br/>
 					<input 
 						type='textarea'
-						className='form-control'
 						name="review"
 						value={this.state.review}
 						onChange={this.handleOnChange}
-					/>
-					<label>Your name:</label><br>
+					/><br/>
+					<label>Your name:</label><br/>
 					<input
 						type="text"
-						className="form-control"
 						name="reviewer"
-						value={this.state.handleoOnChange}
-					/>
+						value={this.state.reviewer}
+						onChange={this.handleOnChange}
+					/><br/>
 					<input type='submit' className="btn btn-primary" />		
 				</form>
 			</div>
