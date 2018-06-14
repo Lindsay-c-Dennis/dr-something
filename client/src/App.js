@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { connect } from 'react-redux';
 import NavBar from './components/NavBar';
 import Home from './components/Home';
 import ReviewBoard from './containers/ReviewBoard';

@@ -23,14 +23,14 @@ const NavBar = () => {
 				className="btn btn primary"
 			>Home</NavLink>
 			<NavLink
-				to="/upcomingshows"
+				to="/reviewboard"
 				exact
 				style={link}
 				activeStyle={{
 					background: 'darkblue'
 				}}
 				className="btn btn primary"
-			>Upcoming Shows</NavLink>
+			>Review Board</NavLink>
 			<NavLink
 				to="/news"
 				exact
