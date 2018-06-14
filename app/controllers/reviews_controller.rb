@@ -1,7 +1,9 @@
 class ReviewsController < ApplicationController
 
 	def create
-		Review.create(review: params[:review], reviewer: params[:reviewer])
+		response.headers['Access-Control-Allow-Origin'] = '*'
+		review = Review.create(review_params)
+		render json: review
 	end
 
 	def index
@@ -12,12 +14,20 @@ class ReviewsController < ApplicationController
 
 	def update
 		review = Review.find(params[:id])
-		review.update(review: params[:review], reviewer: params[:reviewer])
+		review.update(review_params)
+		render json: review
 	end
 
 	def destroy
 		review = Review.find(params[:id])
 		review.destroy
+		render json: review
+	end
+
+	private 
+
+	def review_params
+		params.require(:review).permit(:review, :reviewer)
 	end
 
 end
