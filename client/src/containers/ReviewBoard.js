@@ -1,26 +1,40 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { ReviewCard } from '../components/ReviewCard'
-import { removeReview, editReview } from '../actions/reviewActions'
+import ReviewForm from './ReviewForm';
+import { fetchRevs, addReview, editReview, removeReview } from '../actions/reviewActions'
 
-class Reviews extends React.Component {
+class ReviewBoard extends React.Component {
+
+	componentDidMount() {
+        if (this.props.reviews.length === 0) {
+        	this.props.fetchRevs();
+    	}
+    }
 
 	render() {
-		const { reviews, removeReview, editReview } = this.props
+		const { reviews, editReview, deleteReview } = this.props
 		return (
 			<div>
 				<div className="justify-content-center">
 					<h1>Review Board</h1>
 					<h2>Leave a Note for Dr. Something!</h2>
 				</div>
+				<ReviewForm />
 				<div>
-					{reviews.map(review => {
-						<ReviewCard key={review.id} removeReview={removeReview} editReview={editReview} review={review}/>
-					})}
+					<h2>Reviews:</h2>
+					{reviews.map(review => <ReviewCard key={review.id} removeReview={removeReview} editReview={editReview} review={review}/>)}
 				</div>
 			</div>
 			)
 	}
 }
 
-export default connect(mapStateToProps, { removeReview, editReview })(ReviewBoard);
+const mapStateToProps = (state) => {
+	
+	return {
+		reviews: state.reviews.revs
+	}
+}
+
+export default connect(mapStateToProps, { fetchRevs, addReview, editReview })(ReviewBoard);
