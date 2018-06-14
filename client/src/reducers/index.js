@@ -6,7 +6,8 @@ import videosReducer from './videos_reducer';
 const rootReducer = combineReducers({
 	songs: songsReducer,
 	illustrations: illustrationsReducer,
-	videos: videosReducer
+	videos: videosReducer,
+	reviews: reviewsReducer
 });
 
 export default rootReducer;
