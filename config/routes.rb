@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   get '/songs', to: 'songs#index'
   get '/illustrations', to: 'illustrations#index'
   get '/videos', to: 'videos#index'
+  resources :reviews
 end
