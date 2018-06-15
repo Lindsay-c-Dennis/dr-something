@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { addReview } from '../actions/reviewActions';
+import { card, ex } from '../components/ReviewCard';
 
 class ReviewForm extends React.Component {
 	constructor(props) {
@@ -30,11 +31,12 @@ class ReviewForm extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<div style={card}>
 				<form onSubmit={this.handleOnSubmit}>
-					<label>Your note:</label><br/>
+					<label>Your note <em>(max 75 chars)</em>:</label><br/>
 					<input 
 						type='textarea'
+						maxLength="75"
 						name="review"
 						value={this.state.review}
 						onChange={this.handleOnChange}
