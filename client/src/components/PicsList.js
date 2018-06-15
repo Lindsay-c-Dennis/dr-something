@@ -8,7 +8,7 @@ const PicsList = (props) => {
 				)
 		} else { 
 			return (
-				<div className="justify-content-center">
+				<div key={picTile.id} className="justify-content-center">
 					<img src={picTile.image_url} alt={picTile.artist} width="75%" />
 					<h3><a href={picTile.artist_url}>{picTile.artist}</a> performing at {picTile.venue} on {picTile.date}</h3>
 				</div>
