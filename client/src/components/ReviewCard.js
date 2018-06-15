@@ -1,7 +1,7 @@
 import React from 'react';
 
-export const ReviewCard = (props) => {
-	
+export const ReviewCard = ({ review, removeReview, editReview }) => {
+  
   const card = {
     width: '200px',
     height: '200px',
@@ -13,26 +13,25 @@ export const ReviewCard = (props) => {
   }
 
   const ex = {
-    float: 'left',
-    background: '#D94A38',
+    float: 'right',
+    background: '#d94a38',
     color: 'white',
-    width: '20px',
-    height: '20px',
+    width: '15px',
+    height: '15px',
     margin: '3px',
-    padding: '1px',
+    padding: '0px 1px 3px 1px',
+    
   }
-
-  return (
-  		<div style={card}>
-          <div style={ex}>
-            <strong>X</strong>
-          </div>
-          		<blockquote>
-             			<p>{props.review.review}</p> 
-             			<footer>- <cite title="Source Title">{props.review.reviewer}</cite></footer> 
-          		</blockquote>
-          </div>    
-     	
-    )	  
-
-    }
+  
+    return (
+    		<div style={card}>
+            <button style={ex} key={review.id} onClick={()=> removeReview(review)}>
+              <strong>&times;</strong>
+            </button>
+              <h3><em>{review.review}</em></h3> 
+              <footer>- <cite title="Source Title">{review.reviewer}</cite></footer> 
+            </div>    
+       	
+      )	  
+      
+}
