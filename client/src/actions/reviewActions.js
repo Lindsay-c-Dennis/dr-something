@@ -53,13 +53,12 @@ export const removeReview = (review) => {
 	
 	return dispatch => {
 		const url = `http://localhost:3001/reviews/${review.id}` 
-		debugger
 		return fetch(url, {
 			method: 'DELETE'
 		}).then(response => response.json())
 		.then(res => dispatch({ 
-				type: 'DELETE_REVIEW',
-				payload: review 
+				type: 'REMOVE_REVIEW',
+				payload: review.id 
 			})
 		)
 		.catch(error => console.error('error:', error))
