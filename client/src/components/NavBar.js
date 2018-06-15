@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const link = {
-	width: '16.5%',
+	width: '19.5%',
 	padding: '12px',
 	margin: '0 1px 1px',
 	background: '#1648E3',
@@ -31,15 +31,6 @@ const NavBar = () => {
 				}}
 				className="btn btn primary"
 			>Review Board</NavLink>
-			<NavLink
-				to="/news"
-				exact
-				style={link}
-				activeStyle={{
-					background: 'darkblue'
-				}}
-				className="btn btn primary"
-			>News</NavLink>
 			<NavLink
 				to="/music"
 				exact
