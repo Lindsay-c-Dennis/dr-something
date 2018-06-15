@@ -33,8 +33,8 @@ export const addReview = (review) => {
 
 export const editReview = (review) => {
 	return dispatch => {
-		return fetch('/reviews', {
-			method: 'PUT',
+		return fetch('http://localhost:3001/reviews', {
+			method: 'PATCH',
 			body: JSON.stringify(review),
 			headers:{
 				'Content-Type': 'application/json'
@@ -50,17 +50,16 @@ export const editReview = (review) => {
 }		
 
 export const removeReview = (review) => {
+	
 	return dispatch => {
-		return fetch('/reviews', {
-			method: 'DELETE',
-			body: JSON.stringify(review),
-			headers:{
-				'Content-Type': 'application/json'
-			}
+		const url = `http://localhost:3001/reviews/${review.id}` 
+		debugger
+		return fetch(url, {
+			method: 'DELETE'
 		}).then(response => response.json())
 		.then(res => dispatch({ 
 				type: 'DELETE_REVIEW',
-				payload: res 
+				payload: review 
 			})
 		)
 		.catch(error => console.error('error:', error))
