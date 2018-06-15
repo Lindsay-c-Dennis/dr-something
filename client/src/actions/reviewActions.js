@@ -33,9 +33,10 @@ export const addReview = (review) => {
 
 export const editReview = (review) => {
 	return dispatch => {
-		return fetch('http://localhost:3001/reviews', {
+		const url = `http://localhost:3001/reviews/${review.id}`
+		return fetch(url, {
 			method: 'PATCH',
-			body: JSON.stringify(review),
+			body: JSON.stringify({review: review}),
 			headers:{
 				'Content-Type': 'application/json'
 			}
