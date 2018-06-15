@@ -1,14 +1,12 @@
 class ReviewsController < ApplicationController
 
 	def create
-		response.headers['Access-Control-Allow-Origin'] = '*'
 		review = Review.create(review_params)
 		render json: review
 	end
 
 	def index
 		@reviews = Review.all
-		response.headers['Access-Control-Allow-Origin'] = '*' 
 		render json: @reviews
 	end	
 
@@ -20,8 +18,8 @@ class ReviewsController < ApplicationController
 
 	def destroy
 		review = Review.find(params[:id])
-		review.destroy
 		render json: review
+		review.destroy
 	end
 
 	private 
