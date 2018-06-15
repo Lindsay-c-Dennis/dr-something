@@ -8,6 +8,8 @@ const reviewsReducer = (state= {loading: false, revs: [], error: ''}, action={})
 			return {...state, error: action.payload, loading: false}
 		case 'ADD_REVIEW':
 			return {...state, revs: [...state.revs, action.payload]}
+		case 'REMOVE_REVIEW':
+			return {...state, revs: [state.revs.filter(rev => rev.id !== action.payload.id)]}
 		default:
 			return state;		
 	}
