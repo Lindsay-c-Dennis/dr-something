@@ -13,7 +13,7 @@ class ReviewBoard extends React.Component {
     }
 
 	render() {
-		const { reviews, editReview, deleteReview } = this.props
+		const { reviews, editReview, removeReview } = this.props
 		return (
 			<div>
 				<div className="justify-content-center">
@@ -37,4 +37,4 @@ const mapStateToProps = (state) => {
 	}
 }
 
-export default connect(mapStateToProps, { fetchRevs, addReview, editReview })(ReviewBoard);
+export default connect(mapStateToProps, { fetchRevs, addReview, editReview, removeReview })(ReviewBoard);
