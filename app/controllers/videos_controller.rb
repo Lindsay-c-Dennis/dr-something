@@ -1,8 +1,7 @@
 class VideosController < ApplicationController
 
 	def index
-		@videos = Video.all
-		response.headers['Access-Control-Allow-Origin'] = '*' 
+		@videos = Video.all 
 		render json: @videos
 	end
 
