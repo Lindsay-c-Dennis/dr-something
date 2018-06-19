@@ -31,7 +31,7 @@ export const addReview = (review) => {
 	}
 }
 
-export const editReview = (review) => {
+export const updateReview = (review) => {
 	return dispatch => {
 		const url = `http://localhost:3001/reviews/${review.id}`
 		return fetch(url, {
@@ -42,7 +42,7 @@ export const editReview = (review) => {
 			}
 		}).then(response => response.json())
 		.then(res => dispatch({ 
-				type: 'EDIT_REVIEW',
+				type: 'UPDATE_REVIEW',
 				payload: res 
 			})
 		)
@@ -51,7 +51,6 @@ export const editReview = (review) => {
 }		
 
 export const removeReview = (review) => {
-	
 	return dispatch => {
 		const url = `http://localhost:3001/reviews/${review.id}` 
 		return fetch(url, {
