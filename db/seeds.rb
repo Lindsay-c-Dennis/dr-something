@@ -44,3 +44,11 @@ Illustration.find_or_create_by(image_url: "https://drsomething.files.wordpress.c
 Video.find_or_create_by(title: "Schrodinger's Quarantined", video_url: "https://youtube.com/embed/ZRq91Vs029s", description: "Music video featuring time-lapse photography by <a href='https://vimeo.com/user30781519'>Joseph Appel</a>.")
 Video.find_or_create_by(title: "Red Rover", video_url: "https://youtube.com/embed/Gx98JfsJDk4", description: "Music video featuring footage of the Spirit Mars Rover mission from NASA/JPL - CalTech")
 Video.find_or_create_by(title: "Beaverton TC", video_url: "https://youtube.com/embed/LaXXAh3QpBk", description: "Live performance from October 1, 2016 ath the Lombard Pub in Portland, Oregon, filmed by David Percy")
+
+Review.find_or_create_by(review: "That Dracula song is so spooky!", reviewer: "Brad")
+Review.find_or_create_by(review: "I like to listen to the Beaverton TC song while I wait for the bus.", reviewer: "Connie")
+Review.find_or_create_by(review: "I loved your show at Mississippi Pizza!", reviewer: "Eric")
+Review.find_or_create_by(review: "I'm going to buy your album for my free-spirited grandson! His name is Chad.", reviewer: "Agnes")
+Review.find_or_create_by(review: "We should jam together some time.", reviewer: "Wilhelm")
+Review.find_or_create_by(review: "Puppies ARE nature's rainbows!", reviewer: "Tex")
+Review.find_or_create_by(review: "I'm bringing all my friends to your next show!", reviewer: "Cathy")
