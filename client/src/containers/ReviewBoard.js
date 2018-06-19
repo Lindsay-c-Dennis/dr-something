@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { ReviewCard } from '../components/ReviewCard'
+import { ReviewCard } from './ReviewCard'
 import ReviewForm from './ReviewForm';
 import { fetchRevs, addReview, updateReview, removeReview } from '../actions/reviewActions'
 
