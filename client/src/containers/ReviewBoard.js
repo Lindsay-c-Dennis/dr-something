@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { ReviewCard } from '../components/ReviewCard'
 import ReviewForm from './ReviewForm';
-import { fetchRevs, addReview, editReview, removeReview } from '../actions/reviewActions'
+import { fetchRevs, addReview, updateReview, removeReview } from '../actions/reviewActions'
 
 class ReviewBoard extends React.Component {
 
@@ -13,17 +13,21 @@ class ReviewBoard extends React.Component {
     }
 
 	render() {
-		const { reviews, editReview, removeReview } = this.props
+		const { reviews, updateReview, removeReview } = this.props
 		return (
 			<div>
 				<div className="justify-content-center">
 					<h1>Review Board</h1>
 					<h2>Leave a Note for Dr. Something!</h2>
 				</div>
-				<ReviewForm />
+				
 				<div>
-					<h2>Reviews:</h2>
-					{reviews.map(review => <ReviewCard key={review.id} removeReview={removeReview} editReview={editReview} review={review}/>)}
+					<ReviewForm 
+						review=''
+						reviewer=''
+						isEditing={false}
+						/>
+					{reviews.map(review => <ReviewCard key={review.id} removeReview={removeReview} updateReview={updateReview} review={review}/>)}
 				</div>
 			</div>
 			)
@@ -37,4 +41,4 @@ const mapStateToProps = (state) => {
 	}
 }
 
-export default connect(mapStateToProps, { fetchRevs, addReview, editReview, removeReview })(ReviewBoard);
+export default connect(mapStateToProps, { fetchRevs, addReview, updateReview, removeReview })(ReviewBoard);
