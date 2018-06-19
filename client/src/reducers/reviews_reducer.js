@@ -8,8 +8,9 @@ const reviewsReducer = (state= {loading: false, revs: [], error: ''}, action={})
 			return {...state, error: action.payload, loading: false}
 		case 'ADD_REVIEW':
 			return {...state, revs: [...state.revs, action.payload]}
-		case 'EDIT_REVIEW':
-			debugger	
+		case 'UPDATE_REVIEW':
+			const newRevs = [...state.revs.filter(review => review.id !== action.payload.id), action.payload].sort(function(a, b) {return (a.id - b.id)})
+			return {...state, revs: newRevs }	
 		case 'REMOVE_REVIEW':
 			return {...state, revs: state.revs.filter(rev => rev.id !== action.payload)}
 		default:
