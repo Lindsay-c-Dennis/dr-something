@@ -1,4 +1,4 @@
-const reviewsReducer = (state= {loading: false, revs: [], error: ''}, action={}) => {
+const reviewsReducer = (state= {loading: false, revs: [], error: ''}, action) => {
 	switch (action.type) {
 		case 'LOADING_REVIEWS':
 			return {...state, loading: true}
